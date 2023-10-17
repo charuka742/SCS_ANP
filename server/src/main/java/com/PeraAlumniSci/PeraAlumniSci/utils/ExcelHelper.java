@@ -84,7 +84,7 @@ public class ExcelHelper {
                                     s.setGithub((String) cell.getStringCellValue());
                                     break;
                                 case 12:
-                                    s.setReseachGate((String) cell.getStringCellValue());
+                                    s.setResearchGate((String) cell.getStringCellValue());
                                     break;
                                 case 13:
                                     s.setFb((String) cell.getStringCellValue());
@@ -97,7 +97,7 @@ public class ExcelHelper {
                             if (cid == 0) {
                                 s.setRegNo((int) cell.getNumericCellValue());
                             } else if (cid == 7) {
-                                s.setUpdated(cell.getBooleanCellValue());
+                                s.setProfileUpdated(cell.getBooleanCellValue());
                             }else if (cid == 5){
                                 s.setBatch((int) cell.getNumericCellValue());
                             }

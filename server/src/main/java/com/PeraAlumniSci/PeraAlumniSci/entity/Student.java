@@ -1,8 +1,7 @@
 package com.PeraAlumniSci.PeraAlumniSci.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.PeraAlumniSci.PeraAlumniSci.enums.DegreeType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +14,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @Table(name = "student")
 public class Student {
-
     @Id
     private Integer regNo;
     private String fName;
@@ -23,17 +21,20 @@ public class Student {
     private String nameInitials;
     private String gender;
     private Integer batch;
+
     private String emailPersonal;
-    private boolean isUpdated;
     private String contactNo;
     private String nic;
 
-    //Linkes for Accounts
+    private boolean isProfileUpdated;
+
     private String linkedin;
     private String github;
-    private String reseachGate;
+    private String researchGate;
     private String fb;
 
+    @Enumerated(EnumType.STRING)
+    private DegreeType degreeType;
 
 
 }
