@@ -15,7 +15,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @Table(name = "student")
 public class Student {
-
     @Id
     private Integer regNo;
     private String fName;
@@ -27,13 +26,10 @@ public class Student {
     private boolean isUpdated;
     private String contactNo;
     private String nic;
-
-    //Linkes for Accounts
+    private String password;
     private String linkedin;
     private String github;
-    private String reseachGate;
+    private String researchGate;
     private String fb;
-
-
 
 }
