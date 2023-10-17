@@ -6,24 +6,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "alumni")
-public class Alumni {
+@Getter
+@Setter
+@Entity
+@Table(name = "undergraduate")
+public class Undergraduate {
     @Id
-    private Integer alId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer unId;
 
     @OneToOne
     @JoinColumn(name = "regNo", referencedColumnName = "regNo")
     private Student student;
 
-    private String occupation;
-    private String company;
-    private String workMail;
-    private String country;
-    private String isAtHigherStudies;
-    private String other;
+    private String sciMail;
+    private boolean isOpenToWork;
+
 }
