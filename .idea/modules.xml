@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/server/PeraAlumniSci.iml" filepath="$PROJECT_DIR$/server/PeraAlumniSci.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/SCS_ANP.iml" filepath="$PROJECT_DIR$/.idea/SCS_ANP.iml" />
     </modules>
   </component>

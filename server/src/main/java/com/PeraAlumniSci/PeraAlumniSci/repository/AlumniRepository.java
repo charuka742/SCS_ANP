@@ -1,11 +1,10 @@
 package com.PeraAlumniSci.PeraAlumniSci.repository;
 
-
-import com.PeraAlumniSci.PeraAlumniSci.entity.Student;
+import com.PeraAlumniSci.PeraAlumniSci.entity.Alumni;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface StudentRepository extends JpaRepository<Student, Integer> {
+public interface AlumniRepository extends JpaRepository<Alumni, Integer> {
 
 }
