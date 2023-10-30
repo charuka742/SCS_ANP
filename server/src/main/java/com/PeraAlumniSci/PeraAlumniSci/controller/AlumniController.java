@@ -1,7 +1,7 @@
 package com.PeraAlumniSci.PeraAlumniSci.controller;
 
-import com.PeraAlumniSci.PeraAlumniSci.entity.Student;
-import com.PeraAlumniSci.PeraAlumniSci.service.StudentService;
+import com.PeraAlumniSci.PeraAlumniSci.entity.Alumni;
+import com.PeraAlumniSci.PeraAlumniSci.service.AlumniService;
 import com.PeraAlumniSci.PeraAlumniSci.utils.ExcelHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,16 +14,16 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin("*")
-public class StudentController {
+public class AlumniController {
 
     @Autowired
-    private StudentService studentService;
+    private AlumniService alumniService;
 
-    @PostMapping("/student/upload")
+    @PostMapping("/alumni/upload")
     public ResponseEntity<?> upload(@RequestParam("file")MultipartFile file){
         if (ExcelHelper.checkExcelFormat(file)){
             //true
-            this.studentService.save(file);
+            this.alumniService.save(file);
 
             return ResponseEntity.ok(Map.of("message","File Uploaded and Saved to the DataBase."));
 
@@ -31,8 +31,10 @@ public class StudentController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please Upload Excel File Only");
     }
 
-    @GetMapping("/student")
-    public List<Student> getAllStudents(){
-        return this.studentService.getAllStudents();
+    @GetMapping("/alumni")
+    public List<Alumni> getAllAlumnis(){
+        return this.alumniService.getAllAlumnis();
     }
+
+
 }
