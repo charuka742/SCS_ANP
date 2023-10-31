@@ -1,33 +1,20 @@
 package com.PeraAlumniSci.PeraAlumniSci.service;
 
-import com.PeraAlumniSci.PeraAlumniSci.entity.Student;
-import com.PeraAlumniSci.PeraAlumniSci.repository.StudentRepository;
-import com.PeraAlumniSci.PeraAlumniSci.utils.ExcelHelper;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.PeraAlumniSci.PeraAlumniSci.dto.StudentDto;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.List;
 
 @Service
-public class StudentService {
+public interface StudentService {
 
-    @Autowired
-    private StudentRepository studentRepository;
 
-    public void save(MultipartFile file){
+    StudentDto updateStudent(StudentDto student,Integer studId);
+    StudentDto getStudentById(Integer Id);
+    List<StudentDto> getAllStudents();
 
-        try{
+    void save(MultipartFile file);
 
-            List<Student> studentList = ExcelHelper.convertExcelToListOfStudents(file.getInputStream());
-            this.studentRepository.saveAll(studentList);
-        }catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public List<Student> getAllStudents(){
-        return this.studentRepository.findAll();
-    }
 }
