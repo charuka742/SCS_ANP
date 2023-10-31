@@ -1,5 +1,6 @@
 package com.PeraAlumniSci.PeraAlumniSci.controller;
 
+import com.PeraAlumniSci.PeraAlumniSci.dto.AlumniDto;
 import com.PeraAlumniSci.PeraAlumniSci.entity.Alumni;
 import com.PeraAlumniSci.PeraAlumniSci.service.AlumniService;
 import com.PeraAlumniSci.PeraAlumniSci.utils.ExcelHelper;
@@ -31,9 +32,20 @@ public class AlumniController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please Upload Excel File Only");
     }
 
-    @GetMapping("/alumni")
-    public List<Alumni> getAllAlumnis(){
-        return this.alumniService.getAllAlumnis();
+    @PutMapping("/alumni/{alumId}")
+    public ResponseEntity<AlumniDto> updateAlumi(@RequestBody AlumniDto alumniDto, @PathVariable Integer alumId){
+        AlumniDto updatedAlumni = this.alumniService.updateAlumni(alumniDto, alumId);
+        return ResponseEntity.ok(updatedAlumni);
+    }
+
+    @GetMapping("/alumnis")
+    public  ResponseEntity<List<AlumniDto>> getAllAlumni(){
+        return ResponseEntity.ok(this.alumniService.getAllAlumni());
+    }
+
+    @GetMapping("/alumni/{alumId}")
+    public ResponseEntity<AlumniDto> getAlumniById(@PathVariable Integer alumId){
+        return ResponseEntity.ok(this.alumniService.getAlumniById(alumId));
     }
 
 
