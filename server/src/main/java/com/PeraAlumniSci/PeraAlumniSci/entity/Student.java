@@ -1,12 +1,12 @@
 package com.PeraAlumniSci.PeraAlumniSci.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.PeraAlumniSci.PeraAlumniSci.enums.DegreeType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
 @Getter
@@ -27,6 +27,10 @@ public class Student {
     private boolean isUpdated;
     private String contactNo;
     private String nic;
+
+//    @Enumerated
+//    private DegreeType degree;
+    private boolean isOpentoWork;
 
     //Linkes for Accounts
     private String linkedin;

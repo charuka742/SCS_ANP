@@ -90,6 +90,9 @@ public class ExcelHelper {
                                 case 13:
                                     s.setFb((String) cell.getStringCellValue());
                                     break;
+                                case 14:
+                                    s.setCurrentCountry((String) cell.getStringCellValue());
+                                    break;
                                 default:
                                     break;
                             }
@@ -98,6 +101,8 @@ public class ExcelHelper {
                             if (cid == 0) {
                                 s.setRegNo((int) cell.getNumericCellValue());
                             } else if (cid == 7) {
+                                s.setAtHigherStudies(cell.getBooleanCellValue());
+                            }else if (cid == 15) {
                                 s.setUpdated(cell.getBooleanCellValue());
                             }else if (cid == 5){
                                 s.setBatch((int) cell.getNumericCellValue());
@@ -192,6 +197,8 @@ public class ExcelHelper {
                                 s.setRegNo((int) cell.getNumericCellValue());
                             } else if (cid == 7) {
                                 s.setUpdated(cell.getBooleanCellValue());
+                            }else if (cid == 14) {
+                                s.setOpentoWork(cell.getBooleanCellValue());
                             }else if (cid == 5){
                                 s.setBatch((int) cell.getNumericCellValue());
                             }
