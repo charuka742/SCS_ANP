@@ -1,6 +1,6 @@
 package com.PeraAlumniSci.PeraAlumniSci.controller;
 
-import com.PeraAlumniSci.PeraAlumniSci.entity.Student;
+import com.PeraAlumniSci.PeraAlumniSci.dto.StudentDto;
 import com.PeraAlumniSci.PeraAlumniSci.service.StudentService;
 import com.PeraAlumniSci.PeraAlumniSci.utils.ExcelHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +31,19 @@ public class StudentController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please Upload Excel File Only");
     }
 
+    @PutMapping("/student/{studId}")
+    public ResponseEntity<StudentDto> updateStudent(@RequestBody StudentDto studDto,@PathVariable Integer studId){
+        StudentDto updatedStudent = this.studentService.updateStudent(studDto, studId);
+        return ResponseEntity.ok(updatedStudent);
+    }
+
     @GetMapping("/students")
-    public List<Student> getAllStudents(){
-        return this.studentService.getAllStudents();
+    public ResponseEntity<List<StudentDto>> getAllStudents(){
+        return ResponseEntity.ok(this.studentService.getAllStudents());
+    }
+    @GetMapping("/students/{studId}")
+    public ResponseEntity<StudentDto> getStudentById(@PathVariable Integer studId){
+        return ResponseEntity.ok(this.studentService.getStudentById(studId));
     }
 
 

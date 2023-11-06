@@ -1,27 +1,19 @@
-package com.PeraAlumniSci.PeraAlumniSci.entity;
+package com.PeraAlumniSci.PeraAlumniSci.dto;
 
-import com.PeraAlumniSci.PeraAlumniSci.enums.DegreeType;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
-@Entity
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "student")
-public class Student {
+public class StudentDto {
 
-    @Id
     private Integer regNo;
     private String fName;
     private String lName;
     private String nameInitials;
-    private String gender;
+    //private String gender;
     private Integer batch;
     private String emailPersonal;
     private boolean isUpdated;
@@ -37,7 +29,5 @@ public class Student {
     private String github;
     private String reseachGate;
     private String fb;
-
-
 
 }

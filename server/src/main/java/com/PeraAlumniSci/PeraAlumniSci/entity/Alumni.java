@@ -6,15 +6,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "student")
-public class Student {
+@Table(name = "alumni")
+public class Alumni {
 
     @Id
     private Integer regNo;
@@ -24,20 +23,21 @@ public class Student {
     private String gender;
     private Integer batch;
     private String emailPersonal;
-    private boolean isUpdated;
+    private boolean isProfileUpdated;
     private String contactNo;
     private String nic;
 
+    //modified
+    private String currentCountry;
+    private boolean isAtHigherStudies;
 //    @Enumerated
 //    private DegreeType degree;
-    private boolean isOpentoWork;
+    private boolean isUpdated;
 
     //Linkes for Accounts
     private String linkedin;
     private String github;
     private String reseachGate;
     private String fb;
-
-
 
 }

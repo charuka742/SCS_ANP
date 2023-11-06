@@ -1,5 +1,6 @@
 package com.PeraAlumniSci.PeraAlumniSci.utils;
 
+import com.PeraAlumniSci.PeraAlumniSci.entity.Alumni;
 import com.PeraAlumniSci.PeraAlumniSci.entity.Student;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -21,6 +22,104 @@ public class ExcelHelper {
 
 
         return contentType.equals("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+    }
+
+    public static List<Alumni> convertExcelToListOfAlumnis(InputStream is)  {
+
+        List<Alumni> alumniList = new ArrayList<>();
+
+        try {
+            XSSFWorkbook workboot = new XSSFWorkbook(is);
+            XSSFSheet sheet = workboot.getSheet("data17");
+
+            int rowNumber = 0;
+
+            Iterator<Row> iterator = sheet.iterator();
+
+            while (iterator.hasNext()) {
+
+                Row row = iterator.next();
+                if (rowNumber == 0) {
+                    rowNumber++;
+                    continue;
+                }
+
+                Iterator<Cell> cells = row.iterator();
+                int cid = 0;
+
+                Alumni s = new Alumni();
+
+                while (cells.hasNext()) {
+                    Cell cell = cells.next();
+
+                    switch (cell.getCellType()) {
+                        case STRING:
+                            switch (cid) {
+                                case 1:
+                                    s.setFName((String) cell.getStringCellValue());
+                                    break;
+                                case 2:
+                                    s.setLName((String) cell.getStringCellValue());
+                                    break;
+                                case 3:
+                                    s.setNameInitials((String) cell.getStringCellValue());
+                                    break;
+                                case 4:
+                                    s.setGender((String) cell.getStringCellValue());
+                                    break;
+                                //case 05
+                                case 6:
+                                    s.setEmailPersonal((String) cell.getStringCellValue());
+                                    break;
+                                //case 07
+                                case 8:
+                                    s.setContactNo((String) cell.getStringCellValue());
+                                    break;
+                                case 9:
+                                    s.setNic((String) cell.getStringCellValue());
+                                    break;
+                                case 10:
+                                    s.setLinkedin((String) cell.getStringCellValue());
+                                    break;
+                                case 11:
+                                    s.setGithub((String) cell.getStringCellValue());
+                                    break;
+                                case 12:
+                                    s.setReseachGate((String) cell.getStringCellValue());
+                                    break;
+                                case 13:
+                                    s.setFb((String) cell.getStringCellValue());
+                                    break;
+                                case 14:
+                                    s.setCurrentCountry((String) cell.getStringCellValue());
+                                    break;
+                                default:
+                                    break;
+                            }
+                            break;
+                        case NUMERIC:
+                            if (cid == 0) {
+                                s.setRegNo((int) cell.getNumericCellValue());
+                            } else if (cid == 7) {
+                                s.setAtHigherStudies(cell.getBooleanCellValue());
+                            }else if (cid == 15) {
+                                s.setUpdated(cell.getBooleanCellValue());
+                            }else if (cid == 5){
+                                s.setBatch((int) cell.getNumericCellValue());
+                            }
+                            break;
+
+                        default:
+                            break;
+                    }
+                    cid++;
+                }
+                alumniList.add(s);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return alumniList;
     }
 
     public static List<Student> convertExcelToListOfStudents(InputStream is)  {
@@ -98,6 +197,8 @@ public class ExcelHelper {
                                 s.setRegNo((int) cell.getNumericCellValue());
                             } else if (cid == 7) {
                                 s.setUpdated(cell.getBooleanCellValue());
+                            }else if (cid == 14) {
+                                s.setOpentoWork(cell.getBooleanCellValue());
                             }else if (cid == 5){
                                 s.setBatch((int) cell.getNumericCellValue());
                             }
