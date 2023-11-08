@@ -1,8 +1,10 @@
 import React from 'react'
+import Batches from 'Components/Batches';
+import {Link,useNavigate} from "react-router-dom";
 
 const DS = () => {
   return (
-    <div>DShj</div>
+    <div><Batches/></div>
   )
 }
 

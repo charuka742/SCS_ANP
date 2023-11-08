@@ -4,7 +4,7 @@ import { Await, Link, useNavigate } from "react-router-dom";
 const Batches = () => {
   return (
     <div className="bg-gradient-to-br from-blue-800 via-blue-500 to-blue-45000 h-screen flex justify-center items-center">
-      <div className="space-y-4 flex flex-col items-center">
+      <div className="space-x-4 flex items-center">
         <button className="bg-[#7e0202] hover:bg-red-500 text-white font-bold py-5 px-10 rounded text-sm">
           2010
         </button>
