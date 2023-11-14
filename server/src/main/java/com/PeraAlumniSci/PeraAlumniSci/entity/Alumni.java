@@ -1,6 +1,5 @@
 package com.PeraAlumniSci.PeraAlumniSci.entity;
 
-import com.PeraAlumniSci.PeraAlumniSci.enums.DegreeType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,18 +22,17 @@ public class Alumni {
     private String gender;
     private Integer batch;
     private String emailPersonal;
-    private boolean isProfileUpdated;
     private String contactNo;
     private String nic;
 
     //modified
     private String currentCountry;
     private boolean isAtHigherStudies;
-//    @Enumerated
-//    private DegreeType degree;
+
+    private String degree; //CS, DS, Stat
     private boolean isUpdated;
 
-    //Linkes for Accounts
+    //Links for Accounts
     private String linkedin;
     private String github;
     private String reseachGate;

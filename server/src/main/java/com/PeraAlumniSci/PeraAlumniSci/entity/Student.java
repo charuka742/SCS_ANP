@@ -1,12 +1,10 @@
 package com.PeraAlumniSci.PeraAlumniSci.entity;
 
-import com.PeraAlumniSci.PeraAlumniSci.enums.DegreeType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
 @Getter
@@ -28,8 +26,7 @@ public class Student {
     private String contactNo;
     private String nic;
 
-//    @Enumerated
-//    private DegreeType degree;
+    private String degree; //CS, DS, Stat
     private boolean isOpentoWork;
 
     //Linkes for Accounts

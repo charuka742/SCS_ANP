@@ -11,10 +11,11 @@ import java.util.List;
 public interface AlumniService {
 
 
-    AlumniDto updateAlumni(AlumniDto alumniDto, Integer aluId);
-    AlumniDto getAlumniById(Integer aluId);
-    List<AlumniDto> getAllAlumni();
-    void save(MultipartFile file);
+    public AlumniDto updateAlumni(AlumniDto alumniDto, Integer aluId);
+    public AlumniDto getAlumniById(Integer aluId);
+    public List<AlumniDto> getAllAlumni();
+    public void save(MultipartFile file);
+
 }
 
 

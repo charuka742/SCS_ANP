@@ -30,7 +30,7 @@ public class ExcelHelper {
 
         try {
             XSSFWorkbook workboot = new XSSFWorkbook(is);
-            XSSFSheet sheet = workboot.getSheet("data17");
+            XSSFSheet sheet = workboot.getSheet("sheet 01");
 
             int rowNumber = 0;
 
@@ -91,8 +91,11 @@ public class ExcelHelper {
                                     s.setFb((String) cell.getStringCellValue());
                                     break;
                                 case 14:
-                                    s.setCurrentCountry((String) cell.getStringCellValue());
+                                    s.setDegree((String) cell.getStringCellValue());
                                     break;
+//                                case 15:
+//                                    s.setCurrentCountry((String) cell.getStringCellValue());
+//                                    break;
                                 default:
                                     break;
                             }
@@ -100,9 +103,9 @@ public class ExcelHelper {
                         case NUMERIC:
                             if (cid == 0) {
                                 s.setRegNo((int) cell.getNumericCellValue());
-                            } else if (cid == 7) {
+                            } else if (cid == 15) {
                                 s.setAtHigherStudies(cell.getBooleanCellValue());
-                            }else if (cid == 15) {
+                            }else if (cid == 7) {
                                 s.setUpdated(cell.getBooleanCellValue());
                             }else if (cid == 5){
                                 s.setBatch((int) cell.getNumericCellValue());
@@ -128,7 +131,7 @@ public class ExcelHelper {
 
         try {
             XSSFWorkbook workboot = new XSSFWorkbook(is);
-            XSSFSheet sheet = workboot.getSheet("data17");
+            XSSFSheet sheet = workboot.getSheet("sheet 01");
 
             int rowNumber = 0;
 
@@ -188,6 +191,9 @@ public class ExcelHelper {
                                 case 13:
                                     s.setFb((String) cell.getStringCellValue());
                                     break;
+                                case 14:
+                                    s.setDegree((String) cell.getStringCellValue());
+                                    break;
                                 default:
                                     break;
                             }
@@ -197,7 +203,7 @@ public class ExcelHelper {
                                 s.setRegNo((int) cell.getNumericCellValue());
                             } else if (cid == 7) {
                                 s.setUpdated(cell.getBooleanCellValue());
-                            }else if (cid == 14) {
+                            }else if (cid == 15) {
                                 s.setOpentoWork(cell.getBooleanCellValue());
                             }else if (cid == 5){
                                 s.setBatch((int) cell.getNumericCellValue());

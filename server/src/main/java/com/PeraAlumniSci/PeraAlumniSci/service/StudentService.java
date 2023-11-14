@@ -10,11 +10,10 @@ import java.util.List;
 public interface StudentService {
 
 
-    StudentDto updateStudent(StudentDto student,Integer studId);
-    StudentDto getStudentById(Integer Id);
-    List<StudentDto> getAllStudents();
-
-    void save(MultipartFile file);
+    public StudentDto updateStudent(StudentDto student,Integer studId);
+    public StudentDto getStudentById(Integer Id);
+    public List<StudentDto> getAllStudents();
+    public void save(MultipartFile file);
 
 
 }

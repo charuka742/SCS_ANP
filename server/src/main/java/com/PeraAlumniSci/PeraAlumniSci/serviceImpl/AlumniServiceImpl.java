@@ -35,6 +35,7 @@ public class AlumniServiceImpl implements AlumniService {
         }
     }
 
+    //get All Alumnis
     @Override
     public List<AlumniDto> getAllAlumni(){
         List<Alumni> alumnis = this.alumniRepository.findAll();
@@ -51,7 +52,6 @@ public class AlumniServiceImpl implements AlumniService {
         return this.alumniToDto(alum);
 
     }
-
 
     //Update Alumni method
     @Override

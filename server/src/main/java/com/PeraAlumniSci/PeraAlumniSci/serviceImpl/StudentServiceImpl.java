@@ -27,7 +27,6 @@ public class StudentServiceImpl implements StudentService {
     //save method for excel data importing
     @Override
     public void save(MultipartFile file){
-
         try{
 
             List<Student> studentList = ExcelHelper.convertExcelToListOfStudents(file.getInputStream());
@@ -52,9 +51,7 @@ public class StudentServiceImpl implements StudentService {
     public StudentDto getStudentById(Integer id) {
         Student stud = this.studentRepository.findById(id)
                 .orElseThrow(()-> new ResourceNotFoundException("Student", "Id", id));
-
         return this.studentToDto(stud);
-
     }
 
     //Update Student method
