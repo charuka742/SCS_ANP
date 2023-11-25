@@ -11,7 +11,8 @@ function SignUp() {
   const [lname, setLname] = useState<any>();
   const [email, setEmail] = useState<any>();
   const [telephone, setTelephone] = useState<any>();
-  const [userRole, setUserRole] = useState<any>();
+  const [indexnum, setiIndexnum] = useState<any>();
+  const [userRole, setUserRole] = useState<any>()
   const [password, setPassword] = useState<any>();
   const [cpassword, setCpassword] = useState<any>();
   const [isPasswordMismatch, setIsPasswordMismatch] = useState<any>(false);
@@ -24,7 +25,7 @@ function SignUp() {
     }
   };
 
-  const userType = ["Your type", "staff", "student", "public"];
+  const userType = ["Your type", "Alumini", "Undergrtuate"];
 
   const navigate = useNavigate();
 
@@ -43,8 +44,10 @@ function SignUp() {
       lname: lname,
       email: email,
       telephone: telephone,
+      indexnum: indexnum,
       userRole: userRole,
       password: password,
+      
     };
     console.log(newUser);
     console.log(cpassword);
@@ -149,6 +152,20 @@ function SignUp() {
             placeholder="Telephone Number"
             onChange={(e) => {
               setTelephone(e.target.value);
+            }}
+          />
+        </div>
+        <div className="input-section">
+          <label className="input-label" htmlFor="telephone">
+            Index Number
+          </label>
+          <input
+            type="index"
+            className="input-text"
+            id="indexnum"
+            placeholder="Index Number"
+            onChange={(e) => {
+              setiIndexnum(e.target.value);
             }}
           />
         </div>

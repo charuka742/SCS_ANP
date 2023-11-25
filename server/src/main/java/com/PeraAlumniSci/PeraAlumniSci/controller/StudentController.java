@@ -1,7 +1,6 @@
 package com.PeraAlumniSci.PeraAlumniSci.controller;
 
 import com.PeraAlumniSci.PeraAlumniSci.dto.StudentDto;
-import com.PeraAlumniSci.PeraAlumniSci.entity.Alumni;
 import com.PeraAlumniSci.PeraAlumniSci.entity.Student;
 import com.PeraAlumniSci.PeraAlumniSci.repository.StudentRepository;
 import com.PeraAlumniSci.PeraAlumniSci.service.StudentService;
@@ -19,6 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin("*")
+@RequestMapping("/api/v1")
 public class StudentController {
 
     @Autowired
@@ -77,6 +77,4 @@ public class StudentController {
                 .collect(Collectors.toList());
         return new ResponseEntity<>(studentDtoList,HttpStatus.OK);
     }
-
-
 }

@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin("*")
+@RequestMapping("/api/v1")
 public class AlumniController {
 
     @Autowired
@@ -80,5 +81,4 @@ public class AlumniController {
 
         return new ResponseEntity<>(alumniDtoList,HttpStatus.OK);
     }
-
 }

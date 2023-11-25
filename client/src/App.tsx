@@ -51,7 +51,7 @@ function App() {
             </>
           }
         />
-        <Route
+        {/* <Route
           path="/gallery"
           element={
             <>
@@ -60,7 +60,7 @@ function App() {
               <Footer />
             </>
           }
-        />
+        /> */}
         <Route
           path="/about"
           element={

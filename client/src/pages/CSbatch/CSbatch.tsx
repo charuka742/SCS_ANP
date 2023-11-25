@@ -2,6 +2,9 @@ import React from "react";
 
 const CSbatch = () => {
   const years = Array.from({ length: 6 }, (_, index) => 2005 + index);
+  
+
+
 
   return (
     <div className="bg-gradient-to-br from-blue-800 via-blue-500 to-blue-45000 h-screen flex justify-center items-center">
