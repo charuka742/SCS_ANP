@@ -1,0 +1,102 @@
+.whole-page{
+    /* background: linear-gradient(gray,white); */
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.back-page{
+    background-image: url(photos/uni_photo.jpg);
+    background-size: cover;
+    width: 727px;
+    height: 450px;
+    border-radius: 20px;
+    margin: auto;
+    /* margin-top: 30px;
+    margin-bottom: 30px; */
+}
+.logo{
+    width: 77px;
+    height: 80px;
+    left: 515px;
+    top: 46px;
+    margin-top: 17px;
+    margin-left: 110px;
+}
+.login-data{
+    box-sizing: border-box;
+    width: 300px;
+    height: 450px;
+    /* left: 408px;
+    top: 29px; */
+    background: #F4F3F3;
+    border: 2px solid #BDBDBD;
+    border-radius: 20px;
+    float: right;
+}
+.title{
+    width: 47px;
+    height: 19px;
+    margin-left: 110px;
+    margin-top: 28px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #301B52;
+}
+.input-area{
+    box-sizing: border-box;
+    width: 240px;
+    height: 37px;
+    margin-top: 30px;
+    margin-left: 35px;
+    background: #F7F7F7;
+    border: 1px solid #828282;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+#password{
+    margin-top: 10px;
+}
+.para{
+    width: 260px;
+    height: 14px;
+    margin-top: 21px;
+    margin-left: 36px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 14px;
+    color: #000000;
+}
+.button-section{
+   display: flex;
+   justify-content: space-around;
+   margin-top: 40px;
+}
+.btn{
+    box-sizing: border-box;
+    width: 100px;
+    height: 40px;
+    background: #301B52;
+    border-radius: 20px;
+      /* text */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+}
+#signup-button{
+    background: #DB0916;
+}
+#login-button:hover{
+  background: #70559b;
+
+}
+#signup-button:hover{
+    background: #cd4c55;
+      
+  }

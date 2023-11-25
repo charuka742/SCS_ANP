@@ -1,0 +1,139 @@
+.cnt-img{
+    width: 400px;
+    height: 390px;
+    /* left: 101px;
+    top: 295px; */
+    border-radius: 50%;
+}
+
+.cnt-text{
+    width: 695px;
+    height: 182px;
+    /* left: 645px;
+    top: 405px; */
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 79px;
+    color: #023020;
+}
+
+.cnt-line{
+    width: 265px;
+    height: 10px;
+    /* margin-top: -10%; */
+    margin-left: 55%;
+    margin-top: 50px;
+    /* left: 1080px;
+    top: 640px; */
+    background: #B9BABA;
+}
+
+.cnt-section{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 20px;
+}
+
+.cnt-form{
+    width: 70%;
+    height: 700px;
+    margin: auto;
+    margin-top: 50px;
+    background: #EFCE1B;
+    border-radius: 20px;
+    margin-bottom: 100px;
+}
+
+.cnt-enquiry{
+    width: 405px;
+    height: 41px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 30px;
+    text-align: center;
+    color: #A05D01;
+    margin: auto;
+    padding-top: 30px;
+    
+}
+
+.cnt-para{
+    width: 761px;
+    height: 72px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.cnt-input-details{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 50px;
+}
+
+.cnt-input-label{
+    width: 131px;
+    height: 24px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #000000;
+    margin-left: 50px;
+}
+
+.cnt-input-area{
+    width: 250px;
+    height: 35px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin-left: 10px;
+    outline: none;
+    padding: 10px;
+}
+
+#venue{
+    margin-top: 50px;
+}
+
+#pNumber{
+    margin-top: 50px;
+}
+
+#fullName{
+    margin-left: 55px;
+}
+
+#cmail{
+    margin-left: 70px;
+}
+
+#message{
+    margin-top: 20px;
+    margin-left: 60px;
+    width: 88%;
+    height: 162px;
+}
+
+.cnt-send-btn{
+    width: 120px;
+    height: 50px;
+    margin-top: 50px;
+    margin-left: 190px;
+    background: #A05D01;
+    border-radius: 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+    color: #FFFFFF;
+}

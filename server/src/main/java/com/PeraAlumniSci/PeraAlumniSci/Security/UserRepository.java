@@ -1,19 +1,17 @@
 package com.PeraAlumniSci.PeraAlumniSci.Security;
 
-import com.PeraAlumniSci.PeraAlumniSci.Security.User;
+import com.PeraAlumniSci.PeraAlumniSci.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+@EnableJpaRepositories
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User,Integer>
+{
+    Optional<User> findOneByEmailAndPassword(String email, String password);
 
-    Optional<User> findByUsername(String username);
-
-    Boolean existsByEmail(String email);
-
-    Optional<User> findByUsernameOrEmail(String username, String email);
-
-    boolean existsByUsername(String username);
+    User findByEmail(String email);
 }
