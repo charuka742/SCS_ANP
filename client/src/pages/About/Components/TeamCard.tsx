@@ -5,7 +5,7 @@ import './TeamCard.css'
 const TeamCard = ({name,post}:any) => {
   return (
     <div className='team-card'>
-        <img className='avater' src={avater} alt="profile picture" />
+        <img className='avater' src={avater} alt="profile " />
         <div className='team-details'>
             <p className='card-details'>{name}</p>
             <p className='card-details'>{post}</p>

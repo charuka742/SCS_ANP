@@ -8,23 +8,15 @@ import Home from "pages/Home/Home";
 import Gallery from "pages/Gallery/Gallery";
 import Contact from "pages/Cantact/Contact";
 import About from "pages/About/About";
-import TeamCard from "pages/About/Components/TeamCard";
-import PlayGround from "pages/PlayGround/PlayGround";
 import CSbatch from "pages/CSbatch/CSbatch";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
-// import UserDetails from "pages/UserDetails/UserDetails";
-// import EditProfile from "pages/EditProfile/EditProfile";
 import CS from "pages/CS/CS";
 import DS from "pages/DS/DS";
 import Stat from "pages/Stat/Stat";
-// import SeeAllResources from "pages/SeeAllResources/SeeAllResources";
-// import Administrative from "pages/Administrative/Administrative";
-// import EditAdministrative from "pages/EditAdministrative/EditAdministrative";
-// import SeeAllAdministrative from "pages/SeeAllAdministrative/SeeAllAdministrative";
- import Category from "pages/Category/Category";
-// import AdminDashBoardHome from "pages/AdminDashBoard/AdminDashBoardHome";
+import Category from "pages/Category/Category";
+
 
 function App() {
   return (
@@ -89,16 +81,7 @@ function App() {
             </>
           }
         />
-        <Route
-          path="/playground"
-          element={
-            <>
-              <NavBar />
-              <PlayGround />
-              <Footer />
-            </>
-          }
-        />
+        
         <Route
           path="/CSbatch"
           element={
@@ -129,87 +112,6 @@ function App() {
             </>
           }
         />
-        {/* admin Dashborad */}
-        {/* <Route
-          path="/comfirmedReservation"
-          element={
-            <>
-              <NavBar />
-              <ComfirmedReservation />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/seeAllUsers"
-          element={
-            <>
-              <NavBar />
-              <SeeAllUsers />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-        path="/Category"
-        element={
-          <>
-            <NavBar />
-            <Category />
-            <Footer />
-          </>
-        }
-      />
-        <Route
-          path="/seeAllResources"
-          element={
-            <>
-              <NavBar />
-              <SeeAllResources />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/addAdministrative"
-          element={
-            <>
-              <NavBar />
-              <Administrative />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/updateAdministrative"
-          element={
-            <>
-              <NavBar />
-              <EditAdministrative />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/seeAllAdministrative"
-          element={
-            <>
-              <NavBar />
-              <SeeAllAdministrative />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/addCategory"
-          element={
-            <>
-              <NavBar />
-              <AddCategory />
-              <Footer />
-            </>
-          }
-        /> */}
         <Route
           path="/Stat"
           element={
@@ -251,7 +153,7 @@ function App() {
             </>
           }
         />
-        {/* <Route path="/" element={<TeamCard />} /> */}
+        
       </Routes>
 
       <ToastContainer
@@ -266,7 +168,7 @@ function App() {
         pauseOnHover
         theme="light"
       />
-      {/* Same as */}
+      
       <ToastContainer />
     </div>
   );

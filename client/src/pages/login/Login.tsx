@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import senate from "photos/uni_photo.jpg";
 import logo from "photos/uni_logo.png";
 import "pages/login/Login.css";
-import { Await, Link, useNavigate } from "react-router-dom";
+import {Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -11,11 +10,7 @@ function Login({ onLogin }: any) {
   const [password, setPassword] = useState<any>();
   //   React.useEffect(() => {
   //     console.log(username);
-<<<<<<< HEAD
  
-=======
-  //   }, [username]);
->>>>>>> 44b090ac0a9474c8f5ab99183e1bc00c51a238d7
 
   const navigate = useNavigate();
 

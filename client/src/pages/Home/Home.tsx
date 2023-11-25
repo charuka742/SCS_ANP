@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import uni from "photos/uni2.jpg";
 import "./Home.css";
-import { Link, useNavigate } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
+import { Link} from "react-router-dom";
 import uni_logo from "photos/uni_logo.png";
 import uni3 from "photos/uni3.jpg";
 import uni1 from "photos/uni1.jpg";
@@ -12,7 +11,7 @@ import uni4 from "photos/uni4.jpeg";
 import { DropDown } from "Components/DropDown";
 
 const Home = ({ users }: any) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   interface User {
     token: number;
     user: object;
@@ -63,7 +62,6 @@ const Home = ({ users }: any) => {
             <li className="nav-icon">
               <Link to="/about">About Us</Link>
             </li>
-<<<<<<< HEAD
             {/* <li className="nav-icon">
               <Link to="/gallery">Gallery</Link>
             </li> */}
@@ -73,17 +71,6 @@ const Home = ({ users }: any) => {
             {/* <li className="nav-icon">
               <Link to="/book">Book Now</Link>
             </li> */}
-=======
-            <li className="nav-icon">
-              <Link to="/gallery">Gallery</Link>
-            </li>
-            <li className="nav-icon">
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li className="nav-icon">
-              <Link to="/book">Book Now</Link>
-            </li>
->>>>>>> 44b090ac0a9474c8f5ab99183e1bc00c51a238d7
             <li className="nav-icon">
               {user?.token ? (
                 <button
@@ -122,13 +109,8 @@ const Home = ({ users }: any) => {
       </div>
       <div className="home-nav">
         <div>
-<<<<<<< HEAD
           <h6 className="hm-header-text">Faculty of Science</h6>
           <h6 className="hm-header-sub-text">Departmrnt of SCS</h6>
-=======
-          <h1 className="hm-header-text">University of Peradeniya</h1>
-          <h4 className="hm-header-sub-text">A Vist to Pera...</h4>
->>>>>>> 44b090ac0a9474c8f5ab99183e1bc00c51a238d7
         </div>
         <img className="hm-image" src={uni} alt="" />
       </div>
@@ -192,11 +174,7 @@ const Home = ({ users }: any) => {
           <img className="hm-second-section-img" src={main} alt="" />
         </div>
         <div>
-<<<<<<< HEAD
           <h1 className="hm-second-title">Welcome to FOS</h1>
-=======
-          <h1 className="hm-second-title">Welcome to pera</h1>
->>>>>>> 44b090ac0a9474c8f5ab99183e1bc00c51a238d7
           <hr className="hm-second-line" />
           <p className="hm-second-content">
             Lorem ipsum dolor sit amet. Et illum odio est voluptates inventore
@@ -217,20 +195,9 @@ const Home = ({ users }: any) => {
         <div style={{ marginTop: "100px", marginLeft: "80px" }}>
           <hr className="hm-bottom-line" />
           <h1 className="hm-bottom-title">
-<<<<<<< HEAD
             Department of Computer Science and Statistics
           </h1>
          
-=======
-            Enjoy the Space...Feel the Breeze..ButLeave only the Foot Steps..
-          </h1>
-          <p className="hm-bottom-content">
-            nam explicabo galisum aut galisum assumenda. Cum neque perferendis
-            quo sint nesciunt in iure voluptas ea voluptas nam explicabo galisum
-            aut galisum assumenda. Cum neque perferendis quo sint nesciunt in
-            iure voluptas ea voluptas{" "}
-          </p>
->>>>>>> 44b090ac0a9474c8f5ab99183e1bc00c51a238d7
         </div>
         <div>
           <img

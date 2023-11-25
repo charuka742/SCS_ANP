@@ -6,7 +6,6 @@ import TeamCard from './Components/TeamCard'
 
 const team = [
   {
-<<<<<<< HEAD
     name:"Charuka",
     position:"VC of university of peradeniya"
   },
@@ -16,17 +15,6 @@ const team = [
   },
   {
     name:"ABS",
-=======
-    name:"Prof.lamawansha",
-    position:"VC of university of peradeniya"
-  },
-  {
-    name:"Prof.abc",
-    position:"DVC of university of peradeniya"
-  },
-  {
-    name:"Prof.abc",
->>>>>>> 44b090ac0a9474c8f5ab99183e1bc00c51a238d7
     position:"DVC of university of peradeniya"
   },
   {
@@ -41,18 +29,7 @@ const team = [
     name:"Prof.abc",
     position:"DVC of university of peradeniya"
   }
-  // {
-  //   name:"Mr. Lamawansha",
-  //   position:"DVC of university of peradeniya"
-  // },
-  // {
-  //   name:"Mr. Lamawansha",
-  //   position:"DVC of university of peradeniya"
-  // },
-  // {
-  //   name:"Mr. Lamawansha",
-  //   position:"DVC of university of peradeniya"
-  // }
+  
 ]
 
 function createCard(team: any){

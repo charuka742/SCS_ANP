@@ -1,6 +1,5 @@
 import React from 'react'
 import ButtonCompon from "Components/ButtonCompon";
-import { Link, useNavigate } from "react-router-dom";
 
 const Category = () => {
   return (
@@ -8,4 +7,4 @@ const Category = () => {
   )
 }
 
-export default Category
+export default Category;
