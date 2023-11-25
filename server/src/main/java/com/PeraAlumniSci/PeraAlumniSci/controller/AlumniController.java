@@ -1,7 +1,6 @@
 package com.PeraAlumniSci.PeraAlumniSci.controller;
 
 import com.PeraAlumniSci.PeraAlumniSci.dto.AlumniDto;
-import com.PeraAlumniSci.PeraAlumniSci.dto.StudentDto;
 import com.PeraAlumniSci.PeraAlumniSci.entity.Alumni;
 import com.PeraAlumniSci.PeraAlumniSci.repository.AlumniRepository;
 import com.PeraAlumniSci.PeraAlumniSci.service.AlumniService;
@@ -26,6 +25,7 @@ public class AlumniController {
 
     @Autowired
     private AlumniRepository alumniRepository;
+
     @Autowired
     private ModelMapper modelMapper;
 
@@ -80,9 +80,5 @@ public class AlumniController {
 
         return new ResponseEntity<>(alumniDtoList,HttpStatus.OK);
     }
-
-
-
-
 
 }

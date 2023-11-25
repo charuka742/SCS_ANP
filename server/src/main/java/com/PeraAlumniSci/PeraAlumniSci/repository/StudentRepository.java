@@ -1,6 +1,6 @@
 package com.PeraAlumniSci.PeraAlumniSci.repository;
 
-import com.PeraAlumniSci.PeraAlumniSci.entity.Alumni;
+
 import com.PeraAlumniSci.PeraAlumniSci.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
