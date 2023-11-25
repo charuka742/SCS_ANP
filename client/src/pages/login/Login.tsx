@@ -11,7 +11,11 @@ function Login({ onLogin }: any) {
   const [password, setPassword] = useState<any>();
   //   React.useEffect(() => {
   //     console.log(username);
+<<<<<<< HEAD
  
+=======
+  //   }, [username]);
+>>>>>>> 44b090ac0a9474c8f5ab99183e1bc00c51a238d7
 
   const navigate = useNavigate();
 

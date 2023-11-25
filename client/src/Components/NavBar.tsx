@@ -57,16 +57,28 @@ function NavBar() {
             <li className="nav-icon">
               <Link to="/about">About Us</Link>
             </li>
+<<<<<<< HEAD
             {/* <li className="nav-icon">
               <Link to="/gallery">Gallery</Link>
             </li> */}
+=======
+            <li className="nav-icon">
+              <Link to="/gallery">Gallery</Link>
+            </li>
+>>>>>>> 44b090ac0a9474c8f5ab99183e1bc00c51a238d7
 
             <li className="nav-icon">
               <Link to="/contact">Contact</Link>
             </li>
+<<<<<<< HEAD
             {/* <li className="nav-icon">
               <Link to="/book">Book Now</Link>
             </li> */}
+=======
+            <li className="nav-icon">
+              <Link to="/book">Book Now</Link>
+            </li>
+>>>>>>> 44b090ac0a9474c8f5ab99183e1bc00c51a238d7
             <li className="nav-icon">
               {user?.token ? (
                 <button
