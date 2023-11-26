@@ -62,7 +62,7 @@ function Login({ onLogin }: any) {
         localStorage.setItem("role",JSON.stringify(res?.data?.role));
         // console.log(res)
         if(res?.data?.role=="ALUMNI"){
-          navigate("/")
+          navigate("/userDetails")
         }
         else{
           navigate("/Category")
@@ -70,9 +70,10 @@ function Login({ onLogin }: any) {
       }
     }).catch((e:any)=>{console.log(e)})
   };
+  
   return (
     <div className="whole-page">
-      <form action="" autoComplete="off">
+      <form action="" autoComplete="on">
         <div className="back-page">
           <div className="login-data">
             <img className="logo" src={logo} alt="university logo" />

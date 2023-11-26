@@ -21,19 +21,19 @@
     font-style: normal;
     font-weight: 700;
     font-size: 96px;
-    line-height: 144px;
+    line-height: 100px;
     color: #FFFFFF;
 }
 
 .hm-header-sub-text{
-    width: 570px;
+    width: 600px;
     height: 114px;
     margin-left: 80px;
     padding-top: 50px;
     font-style: italic;
     font-weight: 250;
     font-size: 48px;
-    line-height: 96px;
+    line-height: 80px;
     color: #EFCE1B;
 
 }

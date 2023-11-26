@@ -44,7 +44,7 @@ function SignUp() {
       setUserJson(u)
       const role=localStorage.getItem("role")
       if(role==="ALUMNI"){
-        navigate("/")
+        navigate("/userDetails")
       }
       else{
         navigate("/Category")
@@ -104,6 +104,10 @@ function SignUp() {
       return;
     }
 
+    // if (password !== cpassword) {
+    //   setError("Passwords are didn't matched")
+    //   return;
+    // }
     const newUser = {
       fname: fname,
       lname: lname,
@@ -231,6 +235,9 @@ function SignUp() {
             id="userRole"
             onChange={(e) => setUserRole(e.target.value)}
           >
+            <option value={""} selected disabled>
+                Select Type
+              </option>
             {userType.map((item, index) => (
               <option value={item?.value} key={index}>
                 {item.name}

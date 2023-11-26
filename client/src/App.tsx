@@ -13,6 +13,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CS from "pages/CS/CS";
 import Category from "pages/Category/Category";
+import UserDetails from "pages/UserDetails";
 
 
 function App() {
@@ -95,7 +96,7 @@ function App() {
           element={
             <>
               <NavBar />
-              {/* <UserDetails /> */}
+              <UserDetails />
               <Footer />
             </>
           }

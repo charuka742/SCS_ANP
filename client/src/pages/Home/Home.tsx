@@ -99,12 +99,13 @@ const Home = ({ users }: any) => {
         </div>
       </div>
       <div className='home-nav'>
-        <div className='mb-'>
-          <h6 className='hm-header-text uppercase mb-4 '>Faculty of Science</h6>
+        <div className='mb-2'>
+          <h6 className='hm-header-text uppercase mb-2'>Faculty of Science</h6>
           <h6 className='hm-header-sub-text'>
             Department of Statistics & Computer Science
           </h6>
         </div>
+
         <img className='hm-image' src={uni} alt='' />
       </div>
       <div style={{ display: "flex" }}>
