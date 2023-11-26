@@ -2,6 +2,8 @@ package com.PeraAlumniSci.PeraAlumniSci.service;
 
 
 import com.PeraAlumniSci.PeraAlumniSci.dto.AlumniDto;
+import com.PeraAlumniSci.PeraAlumniSci.dto.RegisterDTO;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,6 +18,9 @@ public interface AlumniService {
     public List<AlumniDto> getAllAlumni();
     public void save(MultipartFile file);
 
+    ResponseEntity<?> addAlumini(RegisterDTO aluminiData);
+
+    ResponseEntity<?> getAlumniDetailsByDegreeAndBach(String degree, int batch);
 }
 
 

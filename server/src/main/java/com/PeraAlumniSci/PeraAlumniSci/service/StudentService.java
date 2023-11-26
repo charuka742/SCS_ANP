@@ -1,6 +1,8 @@
 package com.PeraAlumniSci.PeraAlumniSci.service;
 
+import com.PeraAlumniSci.PeraAlumniSci.dto.RegisterDTO;
 import com.PeraAlumniSci.PeraAlumniSci.dto.StudentDto;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,4 +18,5 @@ public interface StudentService {
     public void save(MultipartFile file);
 
 
+    ResponseEntity<?> addStudent(RegisterDTO aluminiData);
 }

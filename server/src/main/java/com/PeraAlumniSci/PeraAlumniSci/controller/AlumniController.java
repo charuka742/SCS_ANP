@@ -1,6 +1,7 @@
 package com.PeraAlumniSci.PeraAlumniSci.controller;
 
 import com.PeraAlumniSci.PeraAlumniSci.dto.AlumniDto;
+import com.PeraAlumniSci.PeraAlumniSci.dto.RegisterDTO;
 import com.PeraAlumniSci.PeraAlumniSci.entity.Alumni;
 import com.PeraAlumniSci.PeraAlumniSci.repository.AlumniRepository;
 import com.PeraAlumniSci.PeraAlumniSci.service.AlumniService;
@@ -42,6 +43,7 @@ public class AlumniController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please Upload Excel File Only");
     }
 
+//    not working
     @PutMapping("/alumni/{alumId}")
     public ResponseEntity<AlumniDto> updateAlumi(@RequestBody AlumniDto alumniDto, @PathVariable Integer alumId){
         AlumniDto updatedAlumni = this.alumniService.updateAlumni(alumniDto, alumId);
@@ -81,4 +83,17 @@ public class AlumniController {
 
         return new ResponseEntity<>(alumniDtoList,HttpStatus.OK);
     }
+
+    @PostMapping("/add-alumini")
+    public ResponseEntity<?> addAlumini(@RequestBody RegisterDTO aluminiData){
+        return alumniService.addAlumini(aluminiData);
+    }
+
+    @GetMapping("/get-alumni-details-degree-batch/{degree}/{batch}")
+    public ResponseEntity<?> getAlumniDetailsByDegreeAndBach(@PathVariable String degree, @PathVariable int batch){
+        return alumniService.getAlumniDetailsByDegreeAndBach(degree, batch);
+    }
+
+
+
 }

@@ -25,6 +25,7 @@ public class Student {
     private boolean isUpdated;
     private String contactNo;
     private String nic;
+    private String password;
 
     private String degree; //CS, DS, Stat
     private boolean isOpentoWork;

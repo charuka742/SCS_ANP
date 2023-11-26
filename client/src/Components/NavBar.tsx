@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css";
@@ -7,22 +7,20 @@ import { DropDown } from "./DropDown";
 
 function NavBar() {
   const navigate = useNavigate();
-  interface User {
-    token: number;
-    user: object;
-    // add any other properties that your user object has
-  }
+  const [userJson, setUserJson] = useState<any>(null);
 
-  const [userJson, setUserJson] = useState<any>(
-    localStorage.getItem("loggedUser")
-  );
-  // const userJson = localStorage.getItem("loggedUser");
-  const user: User | null = userJson ? JSON.parse(userJson) : null;
+  useEffect(()=>{
+    const u=localStorage.getItem("loggedUser");
+    // console.log(u)
+    if(u!=null){
+      setUserJson(JSON.parse(u))
+    }
+  },[localStorage.getItem("loggedUser")])
 
   const handleLogout = () => {
     localStorage.clear();
     setUserJson(null);
-    navigate("/");
+    navigate("/login");
   };
 
   return (
@@ -68,7 +66,7 @@ function NavBar() {
               <Link to="/book">Book Now</Link>
             </li> */}
             <li className="nav-icon">
-              {user?.token ? (
+              {userJson!=null ? (
                 <button
                   style={{
                     border: "1px solid black",
@@ -97,7 +95,7 @@ function NavBar() {
                 </Link>
               )}
             </li>
-            {user?.token && (
+            {userJson && (
               <li className="nav-icon" style={{ marginTop: "-10px" }}>
                 <DropDown />
               </li>

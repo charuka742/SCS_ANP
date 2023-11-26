@@ -1,55 +1,74 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "photos/uni_logo.png";
 import "pages/login/Login.css";
 import {Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import AuthServices from "services/AuthServices";
 
 function Login({ onLogin }: any) {
+  const navigate=useNavigate();
   const [username, setUsername] = useState<any>();
   const [password, setPassword] = useState<any>();
-  //   React.useEffect(() => {
-  //     console.log(username);
+  const [error, setError] = useState<any>();
+  
+  const [userJson, setUserJson] = useState<any>(null);
+
+  useEffect(()=>{
+    const u=localStorage.getItem("loggedUser");
+    console.log(u)
+    if(u!=null){
+      setUserJson(u)
+      const role=localStorage.getItem("role")
+      if(role==="ALUMNI"){
+        navigate("/")
+      }
+      else{
+        navigate("/Category")
+      }
+    }
+  },[])
  
 
-  const navigate = useNavigate();
-
-  // const saveUsername =
+ const validateForm=()=>{
+  setError("");
+  if(!username){
+    setError("Enter email")
+    return false
+  }
+  else if(!password){
+    setError("Enter password")
+    return false
+  }
+  return true;
+ }
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+
+    if(!validateForm()){
+      console.log(error);
+      return;
+    }
 
     const newLogin = {
       email: username,
       password: password,
     };
 
-    console.log(newLogin);
-
-    var config = {
-      method: "post",
-      url: `${process.env.REACT_APP_API_BASE_URL}/user/auth/authenticate`,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: newLogin,
-    };
-
-    axios(config).then(function (response) {
-      if (response.data.status === 1) {
-        console.log(response.data);
-        localStorage.setItem("loggedUser", JSON.stringify(response.data.data));
-        localStorage.setItem("userEmail", newLogin.email);
-        toast.success("Login Successful");
-        navigate("/");
-        navigate(0);
-        return;
-      } else {
-        // toast.error(result.data.user.message);
-        toast.error("Bad Credentials");
-        console.log("User Not Found");
+    AuthServices.login(newLogin).then((res:any)=>{
+      if(res?.status===200){
+        localStorage.setItem("loggedUser",JSON.stringify(res?.data?.data));
+        localStorage.setItem("role",JSON.stringify(res?.data?.role));
+        // console.log(res)
+        if(res?.data?.role=="ALUMNI"){
+          navigate("/")
+        }
+        else{
+          navigate("/Category")
+        }        
       }
-    });
+    }).catch((e:any)=>{console.log(e)})
   };
   return (
     <div className="whole-page">
@@ -58,11 +77,13 @@ function Login({ onLogin }: any) {
           <div className="login-data">
             <img className="logo" src={logo} alt="university logo" />
             <h2 className="title">LOGIN</h2>
-            <div className="login-input">
+            {error&&
+            <p className="w-full text-center text-sm text-red-600 mt-5 mb-2 font-bold">{error}</p>}
+            <div className="login-input !mt-5">
               <input
                 type="text"
                 id="username"
-                className="input-area"
+                className="input-area !mt-0"
                 placeholder="User Name"
                 onChange={(e: any) => {
                   setUsername(e.target.value);

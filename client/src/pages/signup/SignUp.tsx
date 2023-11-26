@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import image from "../../photos/uni_logo.png";
 import "./Signup.css";
-import axios from "axios";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
+import AuthServices from "services/AuthServices";
 
 function SignUp() {
   const [fname, setFname] = useState<any>();
@@ -25,65 +25,115 @@ function SignUp() {
     }
   };
 
-  const userType = ["Your type", "Alumini", "Undergrtuate"];
+  const userType = [{
+    name:"Alumni",
+    value:"ALUMNI"
+  },
+  {
+    name:"Undergraduate",
+    value:"STUDENT"
+  }];
 
   const navigate = useNavigate();
+  const [userJson, setUserJson] = useState<any>(null);
 
-  // const {
-  //   register,
-  //   handleRegister,
-  //   formState: { errors },
-  // } = useForm();
+  useEffect(()=>{
+    const u=localStorage.getItem("loggedUser");
+    console.log(u)
+    if(u!=null){
+      setUserJson(u)
+      const role=localStorage.getItem("role")
+      if(role==="ALUMNI"){
+        navigate("/")
+      }
+      else{
+        navigate("/Category")
+      }
+    }
+  },[])
 
-  //Hnadle form submit
+  const [error, setError] = useState<any>();
+
+  const validateForm=()=>{
+    setError("");
+    if(!fname){
+      setError("Enter first name")
+      return false
+    }
+    else if(!lname){
+      setError("Enter last name")
+      return false
+    }
+    else if(!email){
+      setError("Enter email")
+      return false
+    }
+    else if(!telephone){
+      setError("Enter mobile number")
+      return false
+    }
+    else if(!indexnum){
+      setError("Enter index number")
+      return false
+    }
+    else if(!userRole){
+      setError("Select role")
+      return false
+    }
+    else if(!password){
+      setError("Enter password")
+      return false
+    }
+    else if(!cpassword){
+      setError("Enter confirm password")
+      return false
+    }
+    return true;
+   }
+
+  
   const handleRegister = (e: any) => {
     e.preventDefault();
+
+    if(!validateForm()){
+      return;
+    }
+
+    if (password !== cpassword) {
+      setError("Passwords are didn't matched")
+      return;
+    }
 
     const newUser = {
       fname: fname,
       lname: lname,
-      email: email,
-      telephone: telephone,
-      indexnum: indexnum,
-      userRole: userRole,
+      emailPersonal: email,
+      contactNo: telephone,
+      regNo: indexnum,
       password: password,
       
     };
-    console.log(newUser);
-    console.log(cpassword);
+    console.log(newUser)
 
-    if (password === cpassword) {
-      console.log(newUser);
-      var config = {
-        method: "post",
-        url: `${process.env.REACT_APP_API_BASE_URL}/user/auth/register`,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: newUser,
-      };
-
-      axios(config)
-        .then(function (response) {
-          console.log(response);
-          if (response.data.status === 1) {
-            console.log(response.data);
-            // window.location.reload();
-            toast.success("Registation Successful");
-            navigate("/login");
-            navigate(0);
-            return;
-          } else {
-            toast.error("Bad Credentials");
-            console.log(response.data.message);
-          }
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    } else {
-      setIsPasswordMismatch(true);
+    if(userRole==="ALUMNI"){
+      AuthServices.registerAlumni(newUser).then((res:any)=>{
+        if(res?.status===200){
+          localStorage.setItem("loggedUser",JSON.stringify(res?.data?.data));
+          localStorage.setItem("role",userRole);
+          navigate("/")    
+        }
+      }).catch((e:any)=>{console.log(e)})
     }
+    else{
+      AuthServices.registerStudent(newUser).then((res:any)=>{
+        if(res?.status===200){
+          localStorage.setItem("loggedUser",JSON.stringify(res?.data?.data));
+          localStorage.setItem("role",userRole);
+          navigate("/Category")    
+        }
+      }).catch((e:any)=>{console.log(e)})
+    }
+      
   };
 
   return (
@@ -91,6 +141,9 @@ function SignUp() {
       <form action="" method="" className="sign">
         <img className="logo" src={image} alt="univetsity logo" />
         <h2 className="header">SIGN UP</h2>
+
+        {error&&
+            <p className="w-full text-center text-sm text-red-600 mt-5 mb-2 font-bold">{error}</p>}
         <div className="input-section">
           <label className="input-label" htmlFor="fname">
             FIRST NAME
@@ -179,8 +232,8 @@ function SignUp() {
             onChange={(e) => setUserRole(e.target.value)}
           >
             {userType.map((item, index) => (
-              <option value={item} key={index}>
-                {item}
+              <option value={item?.value} key={index}>
+                {item.name}
               </option>
             ))}
           </select>

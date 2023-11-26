@@ -19,4 +19,7 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
     @Query(value = "SELECT s FROM Student as s" + " WHERE :degree is NULL or s.degree = :degree")
     public List<Student> findStudentByDegree(@Param("degree") String degree);
 
+    @Query("SELECT s FROM Student s WHERE s.emailPersonal = ?1")
+    Student getStudentByEmail(String email);
+
 }

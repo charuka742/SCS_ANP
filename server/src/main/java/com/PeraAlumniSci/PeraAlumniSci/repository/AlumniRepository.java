@@ -16,4 +16,10 @@ public interface AlumniRepository extends JpaRepository<Alumni, Integer> {
 
     @Query(value = "SELECT a FROM Alumni as a" + " WHERE :degree is NULL or a.degree = :degree")
     public List<Alumni> findAlumniByDegree(@Param("degree") String degree);
+
+    @Query("SELECT a FROM Alumni a WHERE a.emailPersonal = ?1")
+    Alumni getAlumniByEmail(String email);
+
+    @Query("SELECT a FROM Alumni a WHERE a.degree = ?1 AND a.batch = ?2")
+    List<Alumni> getAlumniDetailsByDegreeAndBach(String degree, int batch);
 }

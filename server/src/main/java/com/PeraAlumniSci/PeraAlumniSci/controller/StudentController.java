@@ -1,5 +1,6 @@
 package com.PeraAlumniSci.PeraAlumniSci.controller;
 
+import com.PeraAlumniSci.PeraAlumniSci.dto.RegisterDTO;
 import com.PeraAlumniSci.PeraAlumniSci.dto.StudentDto;
 import com.PeraAlumniSci.PeraAlumniSci.entity.Student;
 import com.PeraAlumniSci.PeraAlumniSci.repository.StudentRepository;
@@ -76,5 +77,10 @@ public class StudentController {
                 .map(student -> modelMapper.map(student, StudentDto.class))
                 .collect(Collectors.toList());
         return new ResponseEntity<>(studentDtoList,HttpStatus.OK);
+    }
+
+    @PostMapping("/add-student")
+    public ResponseEntity<?> addStudent(@RequestBody RegisterDTO aluminiData){
+        return studentService.addStudent(aluminiData);
     }
 }

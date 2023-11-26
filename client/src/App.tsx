@@ -5,22 +5,20 @@ import Login from "./pages/login/Login";
 import NavBar from "Components/NavBar";
 import Footer from "Components/Footer";
 import Home from "pages/Home/Home";
-import Gallery from "pages/Gallery/Gallery";
 import Contact from "pages/Cantact/Contact";
 import About from "pages/About/About";
 import CSbatch from "pages/CSbatch/CSbatch";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import CS from "pages/CS/CS";
-import DS from "pages/DS/DS";
-import Stat from "pages/Stat/Stat";
 import Category from "pages/Category/Category";
 
 
 function App() {
   return (
-    <div>
+    <>
+   
       <Routes>
         <Route
           path="/"
@@ -83,7 +81,7 @@ function App() {
         />
         
         <Route
-          path="/CSbatch"
+          path="/batch"
           element={
             <>
               <NavBar />
@@ -112,29 +110,9 @@ function App() {
             </>
           }
         />
+        
         <Route
-          path="/Stat"
-          element={
-            <>
-              <NavBar />
-              <Stat />
-              <Footer />
-            </>
-          }
-        />
-
-        <Route
-          path="/DS"
-          element={
-            <>
-              <NavBar />
-              <DS />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/CS"
+          path="/alumnies"
           element={
             <>
               <NavBar />
@@ -155,7 +133,7 @@ function App() {
         />
         
       </Routes>
-
+     
       <ToastContainer
         position="top-right"
         autoClose={7000}
@@ -170,7 +148,7 @@ function App() {
       />
       
       <ToastContainer />
-    </div>
+    </>
   );
 }
 

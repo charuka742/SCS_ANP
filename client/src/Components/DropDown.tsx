@@ -13,7 +13,7 @@ export const DropDown = () => {
   const userJson = localStorage.getItem("loggedUser");
   const user: User | null = userJson ? JSON.parse(userJson).user : null;
 
-  console.log("userROle>>", user);
+  // console.log("userROle>>", user);
   return (
     <div>
       <div className="dropdown dropdown-end">

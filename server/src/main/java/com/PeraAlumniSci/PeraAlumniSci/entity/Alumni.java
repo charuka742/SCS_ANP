@@ -24,6 +24,7 @@ public class Alumni {
     private String emailPersonal;
     private String contactNo;
     private String nic;
+    private String password;
 
     //modified
     private String currentCountry;
